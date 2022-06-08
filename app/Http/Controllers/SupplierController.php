@@ -92,6 +92,8 @@ class SupplierController extends Controller
      */
     public function destroy(Supplier $supplier)
     {
+        $this->authorize('delete-permission', $supplier);
+
         try{
             $supplier->delete();
             return redirect()->route('supplier.index')->with('status','Data Supplier berhasil dhapus');
@@ -101,6 +103,7 @@ class SupplierController extends Controller
 
             return redirect()->route('supplier.index')->with('error',$msg);
         }
+        
     }
 
     public function getEditForm(Request $request)

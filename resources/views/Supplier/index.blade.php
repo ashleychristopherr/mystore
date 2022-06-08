@@ -87,12 +87,13 @@
         <td> <a href="{{ url('supplier/'.$li->id.'/edit')}}" class='btn btn-xs btn-info'>edit</a>
         
         
-
+@can('delete-permission', $li)
           <form method='POST' action="{{ url('supplier/'.$li->id)}}">
             @csrf
             @method('DELETE')
             <input type="submit" value="delete" class='btn btn-danger btn-xs'/>
           </form>
+          @endcan
         </td>
 
         <td> <a href="#modalEdit" data-toggle='modal' class='btn btn-warning btn-xs'

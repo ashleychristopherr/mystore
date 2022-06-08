@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
+
+
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -25,6 +27,12 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('delete-permission', function ($user) {
+            return ($user->sebagai=='owner') ;
+        
+        Gate::define('checkmember', 'App\Policies\MemberPolicy@checkmember');
+        });
+
+        /*Gate::define('delete-permission','App\Policies\SupplierPolicy@delete')*/
     }
 }

@@ -47,7 +47,7 @@ class MedicineController extends Controller
         $data=new Medicine();
         $data->name=$request->get('name');
         $data->form=$request->get('form');
-        $data->restriction_formula->get('restriction_formula')
+        $data->restriction_formula->get('restriction_formula');
 
         $data->save();
         return redirect()->route('supplier.index')->with('status','Supplier is added');
@@ -104,5 +104,35 @@ class MedicineController extends Controller
     public function destroy(Medicine $medicine)
     {
         //
+    }
+
+    public function front_index()
+    {
+        $medicine = Medicine::all();
+        return view('frontend.product', compact('medicine'));
+    }
+    
+    public function addToCart($id)
+    {
+        $m=Medicine::find($id);
+        $cart=session()->get('cart');
+        if(!isset($cart[$id]))
+        {
+            $cart[$id]=[
+                "name"=>$m->generic_name,
+                "quantity"=>1,
+                "price"=>$m->price,
+                "photo"=>$m->img
+            ];
+        }else{
+            $cart[$id]['quantity']++;
+        }
+        session()->put('cart',$cart);
+        return redirect()->back()->with('success','Product added to cart succesfully!');
+    }
+
+    public function cart()
+    {
+        return view('frontend.cart');
     }
 }

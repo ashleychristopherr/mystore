@@ -51,6 +51,7 @@
         <th>Form</th>
         <th>Formula</th>
         <th>Description</th>
+        <th>Price</th>
         <th>Faskes TK1</th>
         <th>Faskes TK2</th>
         <th>Faskes TK3</th>
@@ -69,6 +70,7 @@
         <td>{{ $li->form }}</td>
         <td>{{ $li->restriction_formula }}</td>
         <td>{{ $li->description }}</td>
+        <td>{{ $li->price }}</td>
         <td>{{ $li->faskes_tk1 }}</td>
         <td>{{ $li->faskes_tk2 }}</td>
         <td>{{ $li->faskes_tk3 }}</td>

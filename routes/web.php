@@ -48,11 +48,24 @@ Route::resource('obat','MedicineController');
 Route::resource('kategori_obat','CategoryController');
 Route::resource('transaksi','TransactionController');
 
-Route::resource('supplier','SupplierController');
+Route::resource('supplier','SupplierController')
+    ->middleware('auth');
 
 Route::post('transactions/showDataAjax/','TransactionController@showAjax')->name('transaction.showAjax');
 
 Route::post('/supplier/getEditForm','SupplierController@getEditForm')
-        ->name('supplier.getEditForm');
+        ->name('supplier.getEditForm')
+        ->middleware('auth');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'MedicineController@front_index');
+Route::get('cart', 'MedicineController@cart');
+Route::get('add-to-cart/{id}', 'MedicineController@addToCart');
+
+Route::get('/checkout','TransationController@form_submit_front')->middleware(['auth']);
+Route::get('/submit_checkout','TransactionController@submit_front')->name('submitcheckout')->middleware(['auth']);

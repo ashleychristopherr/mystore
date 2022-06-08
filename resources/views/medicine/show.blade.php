@@ -26,6 +26,7 @@
         <th>Form</th>
         <th>Formula</th>
         <th>Description</th>
+        <th>Price</th>
         <th>Faskes TK1</th>
         <th>Faskes TK2</th>
         <th>Faskes TK3</th>
@@ -41,6 +42,7 @@
         <td>{{ $message->form }}</td>
         <td>{{ $message->restriction_formula }}</td>
         <td>{{ $message->description }}</td>
+        <td>{{ $message->price }}</td>
         <td>{{ $message->faskes_tk1 }}</td>
         <td>{{ $message->faskes_tk2 }}</td>
         <td>{{ $message->faskes_tk3 }}</td>
