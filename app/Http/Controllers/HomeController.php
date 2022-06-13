@@ -23,6 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $this->authorize('checkmember');
+
+        $user = Auth::user();
+        $trans = Transaction::where('buyer_id',$user->id)->get();
+        return view('home',compact('trans'));
     }
 }

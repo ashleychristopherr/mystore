@@ -26,7 +26,7 @@
                 <tr>
                     <td data-th="Medicine">
                         <dic class="row">
-                            <div class="col-sm-3 hidden-xs"><img src="{{ asset('img/'.$details['photo']) }}" width="100" height="100" class="img-responsive"/></div>
+                            <div class="col-sm-3 hidden-xs"><img src="{{ asset('img/'.$details['photo'].'.jpg') }}" width="100" height="100" class="img-responsive"/></div>
                             <div class="col-sm-9">
                         <h4 class="nomargin">{{$details['name'] }}</h4>
                         <p>Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.</p>
@@ -37,6 +37,8 @@
             <td data-th="Quantity">{{ $details['quantity'] }} </td>
             <td data-th="Subtotal" class="text-center">Rp. {{ $details['price'] * $details['quantity'] }} </td>
             <td class="actions" data-th="">
+                <a clas="btn btn-info btn-sm update-cart" data-id="{{ $t->id }}"
+                href="{{route('transaction.show',$t->id }}">View</a>
             </td>
         </tr>
             @endforeach

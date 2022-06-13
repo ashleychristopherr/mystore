@@ -92,24 +92,7 @@
                             <p>Sony DSC-RX100M..</p>
                             <span class="price text-info"> $250.22</span> <span class="count"> Quantity:01</span>
                         </div>
-                    </div>
-                    <div class="row cart-detail">
-                        <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-                            <img src="https://cdn2.gsmarena.com/vv/pics/blu/blu-vivo-48-1.jpg">
-                        </div>
-                        <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
-                            <p>Vivo DSC-RX100M..</p>
-                            <span class="price text-info"> $500.40</span> <span class="count"> Quantity:01</span>
-                        </div>
-                    </div>
-                    <div class="row cart-detail">
-                        <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-                            <img src="https://static.toiimg.com/thumb/msid-55980052,width-640,resizemode-4/55980052.jpg">
-                        </div>
-                        <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
-                            <p>Lenovo DSC-RX100M..</p>
-                            <span class="price text-info"> $445.78</span> <span class="count"> Quantity:01</span>
-                        </div>
+                    
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-sm-12 col-12 text-center checkout">

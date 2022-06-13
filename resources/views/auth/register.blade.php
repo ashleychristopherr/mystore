@@ -67,6 +67,7 @@
                             <select name="roles" id="roles">
                                 <option value="owner">Pemilik</option>
                                 <option value="pegawai">Karyawan</option>
+                                <option value="member">Member</option>
                                 </select>
                             </div>
                         </div>

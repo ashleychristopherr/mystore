@@ -67,5 +67,5 @@ Route::get('/', 'MedicineController@front_index');
 Route::get('cart', 'MedicineController@cart');
 Route::get('add-to-cart/{id}', 'MedicineController@addToCart');
 
-Route::get('/checkout','TransationController@form_submit_front')->middleware(['auth']);
+Route::get('/checkout','TransactionController@form_submit_front')->middleware(['auth']);
 Route::get('/submit_checkout','TransactionController@submit_front')->name('submitcheckout')->middleware(['auth']);
